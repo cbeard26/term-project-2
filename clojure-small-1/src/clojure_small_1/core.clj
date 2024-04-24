@@ -2,6 +2,7 @@
 ;; Author > Charles Beard
 ;; Date > 4/22/2024
 ;; this file contains a collection of short functions that demonstrate some of clojure's features
+;; Source: https://www.braveclojure.com/
 
 
 (ns clojure-small-1.core) ;; using the project namespace

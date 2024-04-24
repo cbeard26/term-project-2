@@ -2,6 +2,7 @@
 ;; Author > Charles Beard
 ;; Date > 4/22/2024
 ;; this file demonstrates some of clojures other features
+;; Source: https://www.braveclojure.com/
 
 (ns clojure-small-2.core)
 
@@ -26,7 +27,19 @@
 ;; (reverse-thing (1 2 3 4 +))
 ;; => 10
 
-;; deconstruction is a form of argument formatting that allows for easy access to
+(def mr_m {:name      "Paul"
+             :age       "81"
+             :residence "Abbey Road"})
+
+;; this function is broken because i ran out of time, but hopefully you can visually get the idea;
+;; it's about destructuring
+(defn introduce person
+  [name (:name person)
+   age (:age person)
+   residence (:residence person)]
+  (println "Hello my name is" name "and I am" age "years old and I live at" residence))
+
+;; destructuring is a form of argument formatting that allows for easy access to
 ;; function input that is in a data structure
 (defn my-crazy-function
   [[first-thing second-thing third-thing]] ;; this function will always take 3 args
@@ -70,3 +83,5 @@
 ;; (deref will-there-be-dogs?)
 ;; => true
 
+;; pmap distributes tasks of the map to individual threads, dramatically improving runtime
+(pmap inc [1 2 3 4])
